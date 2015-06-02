@@ -16,12 +16,13 @@ import javax.swing.JOptionPane;
  * @author alfarie
  */
 public class machineInfo {
+    static int focus;
     static ArrayList<headPrint> headList =new ArrayList<headPrint>();
     static ArrayList<Integer> module = new ArrayList<Integer>();
-    
+    static headPrint headtemp;
     static Image default1 = Toolkit.getDefaultToolkit().createImage("./src/screenPrinting/image/test/default1.png");
     static Image default2 = Toolkit.getDefaultToolkit().createImage("./src/screenPrinting/image/test/default2.png");
-   
+    
     static Image dragbackward1 = Toolkit.getDefaultToolkit().createImage("./src/screenPrinting/image/test/dragbackward1.png");
     static Image dragbackward2 = Toolkit.getDefaultToolkit().createImage("./src/screenPrinting/image/test/dragbackward2.png");
     

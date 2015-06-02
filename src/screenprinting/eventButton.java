@@ -21,7 +21,6 @@ import javax.swing.JTextField;
  */
 class eventButton extends JLabel implements MouseListener {
     
-    
     /**
      * 
      * ใช้งานได้เลย scale ไห้เรียบร้อย
@@ -30,6 +29,7 @@ class eventButton extends JLabel implements MouseListener {
     ImageIcon dIm,cIm;
     
     eventButton(Image m1 , Image m2){
+        setName(this.getClass().getSimpleName());
         image1 = m1;
         image2 = m2;
         dIm = new ImageIcon(image1);
@@ -43,8 +43,10 @@ class eventButton extends JLabel implements MouseListener {
         setSize(image1.getWidth(this),image1.getHeight(this));
         addMouseListener(this);
     }
+    
 
     eventButton(Image m1) {
+        
         image1 = m1;
         image2 = m1;
         dIm = new ImageIcon(image1);
@@ -57,6 +59,10 @@ class eventButton extends JLabel implements MouseListener {
         setIcon(dIm);
         setSize(image1.getWidth(this),image1.getHeight(this));
     }
+    public settingPanel getP(){
+        return (settingPanel)(this.getParent());
+        
+    }
     
     public double getheight(){
         return image1.getHeight(this)/MainFrame.Rh;
@@ -67,12 +73,12 @@ class eventButton extends JLabel implements MouseListener {
     
     @Override
     public void mouseClicked(MouseEvent me) {
+        
     }
-
     @Override
     public void mousePressed(MouseEvent me) {
+        
     }
-
     @Override
     public void mouseReleased(MouseEvent me) {
     }
@@ -84,7 +90,9 @@ class eventButton extends JLabel implements MouseListener {
     @Override
     public void mouseExited(MouseEvent me) {
     }
-    
+    public void clear(){
+        setIcon(dIm);
+    }
 }
 
 class input extends JTextField implements MouseListener{
@@ -92,7 +100,6 @@ class input extends JTextField implements MouseListener{
     input(){
         setFont(new Font("Tahoma", Font.PLAIN, 80));
         setHorizontalAlignment(JTextField.CENTER);
-        
         addMouseListener(this);
     }
     
@@ -115,5 +122,8 @@ class input extends JTextField implements MouseListener{
     @Override
     public void mouseExited(MouseEvent me) {
     }
+    
+    
+  
     
 }
